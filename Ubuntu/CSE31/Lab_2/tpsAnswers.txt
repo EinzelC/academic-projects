@@ -1,0 +1,24 @@
+TPS 1:
+Partner's names:
+    Einzel Campana
+    Christopher Hernandez
+    Juan Reyes
+Links for tutorials: 
+    https://code.visualstudio.com/docs/cpp/launch-json-reference#_customizing-gdb-or-lldb
+    https://medium.com/@ogawa.henrique/gdb-debugging-with-vscode-754758837603
+    https://www.gdbtutorial.com/tutorial/how-install-gdb
+TPS 2:
+1. I change the name of program in my launch.json and tasks.json to punish.
+2. I press Ctrl+Shift+B to build my program using tasks.json which compiles my code with -g flag debugging symbols.
+3. I press f5 and to start debugging
+4. The simplest way to add breakpoints is to click on the left of the line number.
+5. I press the next line command in the control bar at the top.
+6. The value of the variables are on the left hand debugger display. I can type -exec print "variable name" to the debug console to print out the variables.
+7. I press continue or f5.  
+8. I can either finish the code or press shift+f5 to stop the debugger.
+TPS 3:
+1. There are 4 variables decalared in the first line and two of them were pointers, *px, *py.
+2. x = 395049983, y = 0, ar[0] = 0; 
+    x, y, and arr[10] are uninitialized so they result in having random values from memory.
+3. I can just initialize and assign variables to them.
+8. This makes sense because arrays are just pointers to a given bound.

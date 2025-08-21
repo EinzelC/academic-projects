@@ -1,0 +1,63 @@
+Enter the number of assignments (between 1 and 25): 5
+Enter score: 85
+Enter score: 90
+Enter score: 75
+Enter score: 100
+Enter score: 80
+Original scores: 85 90 75 100 80 
+Sorted scores (in descending order): 100 90 85 80 75 
+Enter the number of (lowest) scores to drop: 2
+Average (rounded down) with dropped scores removed: 91
+
+Enter the number of assignments (between 1 and 25): 5
+Enter score: 3
+Enter score: 2
+Enter score: 5
+Enter score: 1
+Enter score: 7
+Original scores: 3 2 5 1 7 
+Sorted scores (in descending order): 7 5 3 2 1 
+Enter the number of (lowest) scores to drop: 10
+Enter the number of (lowest) scores to drop: -1
+Enter the number of (lowest) scores to drop: 0
+Average (rounded down) with dropped scores removed: 3
+
+Enter the number of assignments (between 1 and 25): 7
+Enter score: -5
+Enter score: -10
+Enter score: 20
+Enter score: -6
+Enter score: 9
+Enter score: 14
+Enter score: 17
+Original scores: -5 -10 20 -6 9 14 17 
+Sorted scores (in descending order): 20 17 14 9 -5 -6 -10 
+Enter the number of (lowest) scores to drop: 10
+Enter the number of (lowest) scores to drop: -1
+Enter the number of (lowest) scores to drop: 4
+Average (rounded down) with dropped scores removed: 17
+
+Enter the number of assignments (between 1 and 25): 3
+Enter score: -29
+Enter score: 90
+Enter score: -50
+Original scores: -29 90 -50 
+Sorted scores (in descending order): 90 -29 -50 
+Enter the number of (lowest) scores to drop: 0
+Average (rounded down) with dropped scores removed: 3
+
+Enter the number of assignments (between 1 and 25): 10
+Enter score: 1
+Enter score: 2
+Enter score: 3
+Enter score: 4
+Enter score: 0
+Enter score: 9
+Enter score: 8
+Enter score: 7
+Enter score: 6
+Enter score: 5
+Original scores: 1 2 3 4 0 9 8 7 6 5 
+Sorted scores (in descending order): 9 8 7 6 5 4 3 2 1 0 
+Enter the number of (lowest) scores to drop: 3
+Average (rounded down) with dropped scores removed: 6

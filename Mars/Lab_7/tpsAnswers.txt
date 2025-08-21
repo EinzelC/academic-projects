@@ -1,0 +1,25 @@
+TPS 1:
+1. 	A function is a block of code that performs a specified task and returns a value
+	A procedure is a block of code that performs a task without returning a value.
+	A method is a function or procedure that is associated with an object or class.
+2.	Yes
+3.	proc1.c
+4.	j SUM goes to line 20 then adds m and n and saves it into $v0
+5.	jr $ra can be supplemented with j to a return address but it's less flexible and does not allow multiple uses of a function.
+6. 	the return address is saved in line 11 to $ra. Currently it's being saved as 0 which does not make sense.
+7.	The program fails because an invalid return address.
+8.	The correct return address would be 0x00400020
+9.	It didn't work and all of the text segments got shifted forward by 8
+10.	The new return address is 0x00400028. Now the output is 15.
+11. 	We should use jal instead of j because it saves the correct return address to $ra automatically.
+12. 	jal SUM
+TPS 2:
+1.	The output would be 38. The output is 38
+2.	This program forgets to save x to the stack in the sum function.
+3.	The function should return to main because jal saves an address pointing to the next line in main in $ra but after SUM jumps to SUB, $ra gets saved to an address in SUM and causes an infinite loop.
+4. 	We could resolve this problem by saving the x and return addresses to the stack.
+5.	the value of $s0 gets changed from being the value of x. This should not be the case because values declared in main should not change after the function completes.
+6.	I would need to allocate 3 spaces in the stack and then save values then go to sub.
+
+
+

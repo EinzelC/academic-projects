@@ -1,0 +1,44 @@
+Line #7: addi $s0, $zero, -15
+	Machine Code: 0x2010fff1
+	Binary: 001000 00000 10000 1111111111110001
+	Format: I-type
+	Fields:
+	- opcode = 001000 (addi)
+	- rs = 00000 ($0)
+	- rt = 10000 ($s0)
+	- immediate = 1111111111110001 (-15)
+
+Line #14: slt $t0, $s0, $s1
+	Machine Code: 0x0211402a
+	Binary: 000000 10001 10000 01000 00000 101010
+	Format: R-type
+	Fields:
+	- opcode = 000000
+	- rs = 10001 ($17/$s1)
+	- rt = 10000 ($16/$s0)
+	- rd = 01000 ($8/$t0)
+	- shamt = 00000
+	- funct = 101010 (slt)
+
+Line #17: beq $t0, $zero, LEEQ
+	Machine Code: 0x11000006
+	Binary: 000100 01000 00000 0000000000000110
+	Format: I-type
+	Fields:
+	- opcode = 000100 (beq)
+	- rs = 01000 ($8/$t0)
+	- rt = 00000 ($0/$zero)
+	- immediate = 0000000000000110 (Branch to PC + 4 + 6<<2 = PC + 28)
+	(skips 7 instructions)
+
+Line #20: j GRT
+	GRT = 0x40001c = 00000100000000000000011100 >> 2 = 000001000000000000000111
+	Machine instruction = 000010 000001000000000000000111
+	Format: J-type
+	Fields:
+	- opcode = 000010 (j)
+	- target address = 000001000000000000000111 (Absolute jump to address (0x100007 << 2) = 0x40001c)
+	(00000100000000000000011100)
+	
+	
+	

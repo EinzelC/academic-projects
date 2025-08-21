@@ -1,0 +1,10 @@
+Assignment 1:
+    1. The segmentation fault was caused by the succeding inputs after the first one taking in ints rather than pointers.
+    2. I fixed the line by putting & before input.
+    3. sum is being reset when the function goes back to main leading to an average of 0 everytime.
+    4. I change the input of sum to be a pointer to sum so that anything that happens inside the function changes the main declaration of sum.
+Assignment 2:
+    1. The output is not expected. This is because the array is spilling into the next one and printing it.
+    2. THis is because there is leftover data from the previous inputs.
+    3. This happens because the length of the strings exceeds the length of arrays. I can fix it by increasing the string length.
+Assignment 3:

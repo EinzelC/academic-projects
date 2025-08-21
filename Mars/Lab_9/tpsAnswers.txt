@@ -1,0 +1,59 @@
+TPS 1:
+1.	Downloaded reference sheet
+2.	Loaded.
+3.	machine code under Code, basic code under basic
+4.	Each machine instruction contains 32 bits
+5.	There are three main instruction formats, R-type, I-type, and J-type.
+	R-type:
+		add $t0, $t1, $t2  |  0x014A4020
+		sub $s0, $s1, $s2  |  0x02328022
+	I-type:
+		addi $t0, $t1, 66  |  0x21280042
+		lw $s0, 16($sp)    |  0x8FB00010
+	J-type:
+		j 0x00400000	   |  0x08100000
+		jal 0x00ABCDEF	   |  0x0C02AF37
+6.	addi $s0, $zero, 25  |  
+	a. I-type format:
+	opcode | rs(source register) | rt(Target Register) | Immediate Value
+	b. Opcode: 0x08 |  rs: 0x00  |  rt: 0x10 |  immediate: 0x0019
+	c. machine code: 001000 00000 10000 0000000000011001
+	   hex: 0x20100019
+7.	0x00400010 = slt $t0, $zero, LESS
+	a. 0x0230402a = 000000 10001 10000 01000 00000 101010
+	b and c. The sections are normalized with a 6 5 5 5 5 6 format.
+	   Opcode : 000000
+	   rs: 10001
+	   rt: 10000
+	   rd: 01000
+	   shamt: 00000
+	   funct: 101010
+	d. The funct code 0x2A matches slt in MIPS documentation.
+	rs: $s1 ($17, binary 10001).
+	rt: $s0 ($16, binary 10000).
+	rd: $t0 ($8, binary 01000).
+	e. Disassembled Instruction:
+	slt $t0, $s1, $s0
+	this is not the same as:
+	slt $t0, $zero, LESS
+8.	Instruction: 0x15000001
+	a. Opcide is 0x15 which corresponds to bne. It is I format which is [opcode (6)][rs (5)][rt (5)][immediate (16)]
+	b. Opcode: 0x15 (bne)
+	   rs: 0x08 ($t0)
+	   rt: 0x00 ($0)
+	   immediate: 0x0001  (1)
+	c. Target Label: 0x0001 is a PC-relative offset
+	   The address is 0x24020004
+	d. We do not put the target address directly in the immediate field because it is an offset not an absolute address.
+	e. 0x0001 The branch instruction jumps to PC + 4 + (immediate << 2). Here, 0x0001 << 2 = 0x0004, so the jump is +4 bytes from PC + 4
+	f. instrution: 000101 01000 00000 0000000000000001
+	   hex: 0x15000001 (matches the given instruction)
+9.	Address:0x00400018 Machine Code: 0x0810000c
+	a. Format: J-type
+	[opcode (6)][Target Adress (26)]
+	b. Hex opcode: 0x02
+	c. Target Label: 0x10000c
+	   Address: 0x00400030
+	d. 26 bits available for the immediate field. To squeeze the Address you take advantage of the fact that MIPS jumps are word-aligned so the last 2 bits are always 00 which means you can exclude it. 
+	e. 0x0810000c = 000010 00000100000000000000001100
+	  This matches the code column.

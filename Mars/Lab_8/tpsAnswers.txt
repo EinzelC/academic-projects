@@ -1,0 +1,28 @@
+TPS 1:
+1.	Downloaded
+2.	Use li $v0, 5 to read user input
+3.	save "Please enter a number: " as an ascii variable.
+4.	create an input variable, save $v0 to it then load word it into $t3.
+5.	Commented out n and kept it simple.
+6.	It works
+
+TPS 2:
+1.	Trying to draw out the tree provides a extremely big branching image that leads to a lot of -1 and 0 which then turns into 1 and 3 so my first guess is 26. Running the program it is 29.
+2.	recursion.s opened
+3.	string:	.asciiz "Please enter an integer: "
+	la $a0, string
+	li $v0, 4
+	syscall
+4.	this is the argument for recursion
+5.	$v0 is where the return value is stored
+6.	jal recursion the return value $v0 is printed using syscall 1
+7.	Save $ra at 8($sp)
+8.	return 1 if input is -1
+9.	return 3 if input is 0
+10.	because $a0 is the input variable so it gets changed every time you call the function.
+11.	get $a0 and then calls the recursion for m -2
+12.	save the value in 0($sp)
+13.	get back $a0 and then calls the recursion for m -1
+14.	combines the results from recursion(m-2) and recursion(m-1)
+15.	Restores $ra before returning
+

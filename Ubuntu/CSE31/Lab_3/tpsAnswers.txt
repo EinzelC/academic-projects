@@ -1,0 +1,18 @@
+TPS 1:
+    1. The 3 pools for memory
+        Stack: Local variables inside functions
+        Heap: Dynamically alocated arrays/pointers
+        Static data: static and global variables
+    2. mem.c
+        a. four variables are declared.
+        b. three of them are pointers. 
+            the ptr pointer points to an int. 
+            the handle pointer pointer points to the handle pointer.
+            the handle pointer points to an int.
+        c. num is stored in the stack while the pointers are stored in the heap because they were reserved space using malloc
+        d. the pointer will point to the stack because it is pointing to num.
+    3 and 4: drawing.
+TPS 2:
+    1. This program creates a Node which is a pointer that holds an address to the next pointer of the same type. Each Node holds an int and a float. iValue(int) and fValue(float) get initialized in the head pointer.
+    3. The Node head stores an int and float and points to the next Node which does the same. 
+    

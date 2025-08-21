@@ -1,0 +1,11 @@
+TPS 4
+Initialize 3 arrays
+    one to hold the user input 
+    one to hold the numbers whos digits add up to an even number
+    one to hold the numbers whos digits add up to an odd number
+Create a While loop that takes in the user's inputs into the first array.
+Create a function to add the digits together of an array
+    This can be done by adding the first digit and then dividing by 10 to add the next
+Sort The functions into the even and odd arrays
+Find the averages of each array and save it as a float
+Print each average to console

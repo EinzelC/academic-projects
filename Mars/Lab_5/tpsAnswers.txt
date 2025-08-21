@@ -1,0 +1,31 @@
+TPS 1:
+1. MARS stands for Mips Assembler and Runtime Simulator
+2. downloaded it
+3. Downloaded material
+4. Downloaded myFirstExample.s
+5. a. You open the file within MARS through the file browser
+   b. You press the build button while selecting the file you want to run
+   c. You can either press the run button or go step by step by pressing the top buttons.
+   d. No
+   e. You can press the step by step run button.
+   f. You can press the reset button to reset all registers and code or you can build the file again.
+6. myFirstExample.s
+	it declares a 4 byte word that contains the value 10 and saves it as num
+	it makes a new line
+	it loads the value 10 into $t0
+	it adds $t0 and $t1 and saves it to $s1
+	it copies the value of $s1 to 
+	it prints the value to terminal
+	and then it stops the program
+TPS 2:
+1. .data is where the static data is declared
+   .word creates an address and stores a value of 4 bytes
+   .text shows where the main code segment starts
+2. Line 10 is the start of a loop that goes to the end if the loop satisfies the stop condition.
+3. Line 15 jumps back to the start of the loop to see if it satisfies the break condition, otherwise do it again.
+4. You build the file, go into the executable, and click on the box to the left of line 15.
+5. You can press the run button to continue running the rest of the code or you can go step by step by clicking the step by step button.
+6. You can check the contents of a register by looking at the table to the right and you can even edit this value yourself while going step by step in your program.
+7. n holds an address pointing to the value of 13 which results in the program outputting the 13th Fibonacci value.
+8. syscalls are used for input and output for mips. to use it you load $v0 with a number 1-59 and then call syscall after it to run that values service.
+ 

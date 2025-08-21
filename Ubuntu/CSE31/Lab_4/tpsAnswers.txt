@@ -1,0 +1,12 @@
+TPS 1:
+    2. I expect it to print out the Hex code for A because the first value it is pointing two got changed to A.
+    4. I am lost. It printed 2 but I assume it's because char only goes up 1 byte while int goes up by 4.
+    5.  a. 2 arrays are declared in this program, though one is a pointer
+        b. four_ints and four_c are initially pointing to the same location
+    6. THe addresses are pointing to the same location at the start but char increments by 1 while int increments by 4.
+    10. C increments the pointer by the type it's declared as, 1 for char and 4 for int.
+TPS 2:
+    1. line #8 allocates 5 spaces that fits pointers. 
+    2. Using pointers you can access the ith value of the array by using *(arr+i)
+    3. *(*(arr+i)+j)
+    4. It's important to pass the size because the function would not know when to go to the next row or colomn.

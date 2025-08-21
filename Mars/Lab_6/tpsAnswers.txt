@@ -1,0 +1,23 @@
+TPS 1:
+1. The text segment starts at 0x00400000 and the data segment starts at 0x10010000
+2. Source uses letters to discern different registers while Basic uses just numbers. Some commands from source gets translated to two basic commands.
+3. there's a 32 byte difference between addresses
+4. there are 8 columns listed for each address in MARS
+5. The columns represent offsets within the address
+6. m:	.word 20
+7. 0x10010008
+8. How to print a string
+	str1: .asciiz "I love CSE31!"
+	la $a0 myString
+	li $v0, 4
+	syscall
+9. str1 is stored at 0x10010008
+10. it's stored backwards which is what I expect from how its a array of characters
+11. 8
+12. It loads the address n is holding into $t3.
+TPS 2:
+1. Because you can achieve all of the inequality functions with just two instructions.
+2. n: .word 25
+3. li $v0, 5     
+   syscall    
+   sw $v0, input

@@ -1,0 +1,89 @@
+.data
+prompt:     .asciiz "Please enter a number: "
+newline:    .asciiz "\n"
+
+.text
+main:
+    # Print input prompt
+    li $v0, 4
+    la $a0, prompt
+    syscall
+
+    # Read integer input
+    li $v0, 5
+    syscall
+    move $a0, $v0       # Store input in $a0 for recursion
+
+    jal recursion       # Call recursion(x)
+
+    # Print result and newline
+    move $a0, $v0       # Move return value to $a0
+    li $v0, 1           # Print integer
+    syscall
+    li $v0, 4           # Print newline
+    la $a0, newline
+    syscall
+
+    # Exit program
+    li $v0, 10
+    syscall
+
+recursion:
+    # Prologue: Save $ra and $a0
+    addi $sp, $sp, -16  # Allocate space for $ra, $a0, and two temps
+    sw $ra, 12($sp)     # Save return address
+    sw $a0, 8($sp)      # Save original m
+
+    # Check if m == -1
+    li $t0, -1
+    beq $a0, $t0, return_3
+
+    # Check if m <= -2
+    li $t0, -2
+    ble $a0, $t0, less_than_neg2
+
+    # Else case (recursive)
+    # First recursive call: recursion(m - 3)
+    lw $a0, 8($sp)      # Restore original m
+    addi $a0, $a0, -3
+    jal recursion
+    sw $v0, 4($sp)      # Store result of recursion(m-3)
+
+    # Second recursive call: recursion(m - 2)
+    lw $a0, 8($sp)      # Restore original m
+    addi $a0, $a0, -2
+    jal recursion
+    sw $v0, 0($sp)      # Store result of recursion(m-2)
+
+    # Get original m
+    lw $t0, 8($sp)
+
+    # Combine results: recursion(m-3) + m + recursion(m-2)
+    lw $t1, 4($sp)      # t1 = recursion(m-3)
+    lw $t2, 0($sp)      # t2 = recursion(m-2)
+    add $v0, $t1, $t0   # recursion(m-3) + m
+    add $v0, $v0, $t2   # + recursion(m-2)
+
+    j end_recur
+
+return_3:
+    li $v0, 3           # Return 3 for m == -1
+    j end_recur
+
+less_than_neg2:
+    # Check if m < -2
+    li $t0, -2
+    blt $a0, $t0, return_2
+
+    # Else (m == -2)
+    li $v0, 1           # Return 1 for m == -2
+    j end_recur
+
+return_2:
+    li $v0, 2           # Return 2 for m < -2
+
+end_recur:
+    # Epilogue: Restore $ra and pop stack
+    lw $ra, 12($sp)
+    addi $sp, $sp, 16
+    jr $ra

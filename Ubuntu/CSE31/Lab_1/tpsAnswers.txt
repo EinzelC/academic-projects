@@ -1,0 +1,19 @@
+TPS 1
+    Einzel Campana
+    Christopher Hernandez
+    Brenden Dalipe
+TPS 2
+    1. On Windows 11 you can press Windows + X and click on terminal
+        a. You can open more than one terminal at a time
+        b. You would want to open more than one terminal at the same time in case you want to access multiple areas of the computer at the same time and multitask.
+    2. ls
+    3. I would first just type "cd" to get to the root file then I would input "cd Desktop"
+    4. mkdir CSE31
+TPS 3
+    3. gcc main.c -o main
+    4. You get no errors and are allowed to run the program.
+    5. -c makes it so that the code does not run the linker
+    6. -g lets us use the debugger for the code
+    7. change the name after -o to be cselab1
+    8. it creates an a.out file
+    9. I used ./a.out
