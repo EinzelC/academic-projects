@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE 106 - Lab 5: Grades Manager</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Student Grades Manager</h1>
+    </header>
+
+    <main>
+        <!-- 1: View All Grades -->
+        <section class="card">
+            <h2>All Students and Grades</h2>
+            <button id="btn-load-all">Load All Grades</button>
+            <table id="grades-table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="grades-body">
+                    <!-- Rows will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 2: Get Specific Grade -->
+        <section class="card">
+            <h2>Get Student Grade</h2>
+            <input type="text" id="get-name" placeholder="Enter student name">
+            <button id="btn-get">Get Grade</button>
+            <p id="get-result" class="result"></p>
+        </section>
+
+        <!-- 3: Create New Student -->
+        <section class="card">
+            <h2>Create New Student</h2>
+            <input type="text" id="post-name" placeholder="Student name">
+            <input type="number" id="post-grade" placeholder="Grade (e.g., 97.5)" step="0.1">
+            <button id="btn-post">Add Student</button>
+            <p id="post-result" class="result"></p>
+        </section>
+
+        <!-- 4: Edit Grade -->
+        <section class="card">
+            <h2>Edit Student Grade</h2>
+            <input type="text" id="put-name" placeholder="Student name">
+            <input type="number" id="put-grade" placeholder="New grade" step="0.1">
+            <button id="btn-put">Update Grade</button>
+            <p id="put-result" class="result"></p>
+        </section>
+
+        <!-- 5: Delete Grade -->
+        <section class="card">
+            <h2>Delete Student</h2>
+            <input type="text" id="delete-name" placeholder="Student name">
+            <button id="btn-delete" class="danger">Delete Student</button>
+            <p id="delete-result" class="result"></p>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
